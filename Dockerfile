@@ -12,4 +12,4 @@ RUN \
 
 COPY . .
 
-CMD [ "python3", "-u" , "manage.py", "runserver" ]
+CMD [ "python3" , "manage.py", "runserver", "0.0.0.0:8000" ]
