@@ -15,3 +15,10 @@ Python 3x, pip, Django, Postgresql
 5. Run `python manage.py migrate`. This will create database schema without any data.
 6. Run `python manage.py runserver` to run *TEST* instance of your database. Use some other stuff (i.e., Gunicorn) for your production environment.
 
+
+## How to run on docker
+
+sudo docker build -t lifetycon/saveload .
+
+sudo docker run -p 8000:8000 --name saveload -d --restart=always --env DB_DATABASE_NAME=charting --env DB_USER=postgres --env DB_PASSWORD=postgres --env DB_HOST=localhost --env DB_DATABASE_PORT=5432 lifetycon/saveload
+
